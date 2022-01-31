@@ -3,9 +3,9 @@ include ("../conexao.php");
 
 if($_POST){
   $nome = $_POST["nome"];
-  $sql = "insert into coordenacao (nome) values ('$nome')";
+  $sql = "insert into funcao (nome) values ('$nome')";
   mysqli_query($con,$sql);
-  header("Location: http://localhost/cecpa/coordenacao/listar.php");
+  header("Location: http://localhost/cecpa/funcao/listar.php");
 }
 
 ?>
@@ -20,7 +20,7 @@ if($_POST){
     <div class="container">
         <h1>CECPA - Centralizadora de compras</h1>
         <?php include("../menu.php");?>
-            <h1>Coordenação</h1>
+            <h1>Função</h1>
             <form method="post" action="cadastro.php">
             <div class="mb-3">
                 <label class="form-label">Nome</label>

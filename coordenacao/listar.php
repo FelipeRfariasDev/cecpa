@@ -1,5 +1,5 @@
 <?php
-$con = new mysqli("localhost","root","","cecpa","3306");
+include ("../conexao.php");
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
