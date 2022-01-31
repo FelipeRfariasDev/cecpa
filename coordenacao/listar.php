@@ -11,8 +11,8 @@ $con = new mysqli("localhost","root","","cecpa","3306");
   <body>
     <div class="container">
         <h1>CECPA - Centralizadora de compras</h1>
-        <?php include("menu.php");?>
-        <h1>Coordenação<a href="#" class="btn btn-success">Novo</a></h1>
+        <?php include("../menu.php");?>
+        <h1>Coordenação<a href="http://localhost/cecpa/coordenacao/cadastro.php" class="btn btn-success">Novo</a></h1>
         <table class="table table-striped">
           <thead>
             <tr>
