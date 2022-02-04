@@ -1,4 +1,4 @@
 <?php
 
-$con = new mysqli("localhost","root","","cecpa","3307");
+$con = new mysqli("localhost","root","","cecpa","3306");
 
