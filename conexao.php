@@ -1,4 +1,3 @@
 <?php
-
-$con = new mysqli("localhost","root","","cecpa","3306");
-
+$con = sqlsrv_connect("(local)\sqlexpress", ["Database"=>'GESTAO_SQL', "UID"=>'', "PWD"=>'']);
+?>

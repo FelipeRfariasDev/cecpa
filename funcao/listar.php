@@ -12,7 +12,7 @@ include ("../conexao.php");
     <div class="container">
         <h1>CECPA - Centralizadora de Compras</h1>
         <?php include("../menu.php");?>
-        <h1>Funções<a href="http://localhost/cecpa/funcao/cadastro.php" class="btn btn-success">Novo</a></h1>
+        <h1>Funções &nbsp; <a href="http://localhost/cecpa/funcao/cadastro.php" class="btn btn-success">Novo</a></h1>
         <table class="table table-striped">
           <thead>
             <tr>
@@ -24,8 +24,8 @@ include ("../conexao.php");
           <tbody>
             <?php
             $sql = "SELECT * FROM funcao";
-            $resultado = mysqli_query($con,$sql);
-            while($linha=mysqli_fetch_array($resultado)){
+            $resultado = sqlsrv_query($con,$sql);
+		        while($linha=sqlsrv_fetch_array($resultado)){
             ?>
             <tr>
               <th scope="row"><?php echo $linha["id"];?></th>

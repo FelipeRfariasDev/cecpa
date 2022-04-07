@@ -3,11 +3,15 @@ include ("../conexao.php");
 
 if($_POST){
   $nome = $_POST["nome"];
-  $sql = "insert into coordenacao (nome) values ('$nome')";
-  mysqli_query($con,$sql);
-  header("Location: http://localhost/cecpa/coordenacao/listar.php");
+  $sql = "insert into coordenacao (nome) values (?)";
+  $params = array($nome);
+	$resultado = sqlsrv_query($con,$sql,$params);
+  if ($resultado) {  
+	  header("Location: /cecpa/coordenacao/listar.php");
+  } else {  
+    die(print_r(sqlsrv_errors(), true));  
+  }
 }
-
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">

@@ -3,17 +3,20 @@ include ("../conexao.php");
 
 if($_POST){
   $matricula = $_POST["matricula"];
-  $nome_pessoa_variavel = $_POST["nome_pessoa_form"];
+  $nome = $_POST["nome"];
   $endereco = $_POST["endereco"];
   $email = $_POST["email"];
   $telefone = $_POST["telefone"];
   $coordenacao_id = $_POST["coordenacao_id"];
   $funcao_id = $_POST["funcao_id"];
-  $sql = "insert into funcionarios (nome,matricula,endereco,email,telefone,coordenacao_id,funcao_id) values ('$nome_pessoa_variavel','$matricula','$endereco','$email', '$telefone', $coordenacao_id, $funcao_id)";
-  //echo $sql;
-  //exit;
-  mysqli_query($con,$sql);
-  header("Location: http://localhost/cecpa/funcionarios/listar.php");
+  $sql = "insert into funcionarios (nome,matricula,endereco,email,telefone,coordenacao_id,funcao_id) values (?,?,?,?,?,?,?)";
+  $params = array($matricula,$nome,$endereco,$email,$telefone,$coordenacao_id,$funcao_id);  
+	$resultado = sqlsrv_query($con,$sql,$params);
+  if ($resultado) {  
+	  header("Location: /cecpa/funcionarios/listar.php");
+  } else {  
+    die(print_r(sqlsrv_errors(), true));  
+  }
 }
 
 ?>
@@ -36,7 +39,7 @@ if($_POST){
             </div>
             <div class="mb-3">
                 <label class="form-label">Nome Completo</label>
-                <input type="text" class="form-control" required placeholder = "Qual é o seu nome?" name="nome_pessoa_form">
+                <input type="text" class="form-control" required placeholder = "Qual é o seu nome?" name="nome">
             </div>
             <div class="mb-3">
                 <label class="form-label">Endereço Residencial</label>
@@ -52,14 +55,12 @@ if($_POST){
             </div>
             <div class="mb-3">
                 <label class="form-label">Coordenação</label>
-
-                <!--<input type="text" class="form-control" required placeholder = "Qual é a sua coordenação?" name="coordenacao_id"> -->
                 <select name="coordenacao_id" class="form-control" required>
                     <option></option>
                     <?php 
-                    $query_buscar_funcoes = "select * from coordenacao";
-                    $resultado = mysqli_query($con,$query_buscar_funcoes);
-                    while($linha=mysqli_fetch_array($resultado)){
+                    $sql = "select * from coordenacao";
+                    $resultado = sqlsrv_query($con,$sql);
+		                while($linha=sqlsrv_fetch_array($resultado)){
                     ?>
                     <option value=<?php echo $linha["id"];?>><?php echo $linha["nome"];?></option>
                     <?php  
@@ -70,25 +71,18 @@ if($_POST){
             </div>
             <div class="mb-3">
                 <label class="form-label">Função</label>
-
-                <!-- inicio antes -->
-                <!-- <input type="text" class="form-control" required placeholder = "Qual é a sua funcao?" name="funcao_id"> -->
-                <!-- fim antes -->   
-
-                <!-- inicio depois -->
                 <select name="funcao_id" class="form-control" required>
                     <option></option>
                     <?php 
-                    $query_buscar_funcoes = "select * from funcao";
-                    $resultado = mysqli_query($con,$query_buscar_funcoes);
-                    while($linha=mysqli_fetch_array($resultado)){
+                    $sql = "select * from funcao";
+                    $resultado = sqlsrv_query($con,$sql);
+		                while($linha=sqlsrv_fetch_array($resultado)){
                     ?>
                     <option value=<?php echo $linha["id"];?>><?php echo $linha["nome"];?></option>
                     <?php  
                     }
                     ?>
                 </select>
-                <!-- fim depois -->
             </div>
             <input type="submit" class="form-control" value="Salvar">
         </form>

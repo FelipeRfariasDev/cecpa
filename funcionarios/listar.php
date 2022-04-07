@@ -12,7 +12,7 @@ include ("../conexao.php");
     <div class="container">
         <h1>CECPA - Centralizadora de Compras</h1>
         <?php include("../menu.php");?>
-        <h1>Funcionários<a href="http://localhost/cecpa/funcionarios/cadastro.php" class="btn btn-success">Novo</a></h1>
+        <h1>Funcionários &nbsp; <a href="http://localhost/cecpa/funcionarios/cadastro.php" class="btn btn-success">Novo</a></h1>
         <table class="table table-striped">
           <thead>
             <tr>
@@ -29,7 +29,6 @@ include ("../conexao.php");
           </thead>
           <tbody>
             <?php
-            //$sql = "SELECT * FROM funcionarios";
             $sql = "SELECT 
             funcionarios.id,
             funcionarios.nome,
@@ -39,14 +38,14 @@ include ("../conexao.php");
             funcionarios.telefone,
             coordenacao.nome as coordenacao_nome,
             funcao.nome AS funcao_nome
-        FROM
+            FROM
             funcionarios
-                INNER JOIN
+              LEFT JOIN
             funcao ON (funcao.id = funcionarios.funcao_id)
-                INNER JOIN
+                LEFT JOIN
             coordenacao ON (coordenacao.id = funcionarios.coordenacao_id)";
-            $resultado = mysqli_query($con,$sql);
-            while($linha=mysqli_fetch_array($resultado)){
+ 		        $resultado = sqlsrv_query($con,$sql);
+		        while($linha=sqlsrv_fetch_array($resultado)){
             ?>
             <tr>
               <th scope="row"><?php echo $linha["id"];?></th>
