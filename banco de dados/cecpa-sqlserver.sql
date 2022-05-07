@@ -1,16 +1,16 @@
-CREATE TABLE [dbo].[coordenacao](
+CREATE TABLE [dbo].[teste_coordenacao](
 	[id] [int] IDENTITY(1,1) NOT NULL,
 	[nome] [nchar](100) NULL
 ) ON [PRIMARY]
 GO
 
-CREATE TABLE [dbo].[funcao](
+CREATE TABLE [dbo].[teste_funcao](
 	[id] [int] IDENTITY(1,1) NOT NULL,
 	[nome] [nchar](100) NULL
 ) ON [PRIMARY]
 GO
 
-CREATE TABLE [dbo].[funcionarios](
+CREATE TABLE [dbo].[teste_funcionario](
 	[id] [int] IDENTITY(1,1) NOT NULL,
 	[nome] [nchar](100) NULL,
 	[matricula] [nchar](30) NULL,
@@ -22,7 +22,7 @@ CREATE TABLE [dbo].[funcionarios](
 ) ON [PRIMARY]
 GO
 
-CREATE TABLE [dbo].[usuarios](
+CREATE TABLE [dbo].[teste_usuario](
 	[id] [int] IDENTITY(1,1) NOT NULL,
 	[nome] [nchar](100) NULL,
 	[email] [nchar](100) NULL,

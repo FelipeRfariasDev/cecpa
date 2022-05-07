@@ -1,4 +1,4 @@
-<?php include ("conexao.php"); ?>
+<?php include ("../conexao.php"); ?>
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
@@ -9,8 +9,4 @@
   <body>
     <div class="container">
       <h1>CECPA - Centralizadora de Compras</h1>
-      <?php include("layout/menu.php");?>
-        <h1>Inicio</h1>
-      </div>
-</body>
-</html>
+      <?php include("../layout/menu.php");?>

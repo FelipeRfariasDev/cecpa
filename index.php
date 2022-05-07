@@ -7,25 +7,24 @@
   </head>
   <body>
     <div class="container">
-        <h1>Login CECPA</h1>
-        <form method="post" action="inicio.php">
-            <div class="mb-3 row">
-                <label class="col-sm-2 col-form-label">Email</label>
-                <div class="col-sm-10">
-                <input type="email" class="form-control" name="email">
-                </div>
-            </div>
-            <div class="mb-3 row">
-                <label class="col-sm-2 col-form-label">Senha</label>
-                <div class="col-sm-10">
-                <input type="password" class="form-control" name="senha">
-                </div>
-            </div>
-
-            <div class="mb-3 row">
-                <button type="submit" class="btn btn-success">Entrar</button>
-            </div>
-        </form>
+      <h1>Login CECPA</h1>
+      <form method="post" action="inicio.php">
+        <div class="mb-3 row">
+          <label class="col-sm-2 col-form-label">Email</label>
+          <div class="col-sm-10">
+          <input type="email" class="form-control" name="email">
+          </div>
+        </div>
+        <div class="mb-3 row">
+          <label class="col-sm-2 col-form-label">Senha</label>
+          <div class="col-sm-10">
+          <input type="password" class="form-control" name="senha">
+          </div>
+        </div>
+        <div class="mb-3 row">
+          <button type="submit" class="btn btn-success">Entrar</button>
+        </div>
+      </form>
     </div>
-  </body>
+</body>
 </html>
