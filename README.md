@@ -15,4 +15,3 @@
 > /c/xampp/php/php.ini adicionar extension=php_sqlsrv_74_ts_x64.dll
 
 > Exemplo /c/xampp/htdocs/cecpa/config/php.ini linha 972
-
