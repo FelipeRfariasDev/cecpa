@@ -1,5 +1,5 @@
-<?php include("../layout/header.php");?>
-<?php
+<?php include("../layout/header.php");
+
 if($_POST){
   $nome = $_POST["nome"];
   $sql = "insert into {$prefixo_tabelas}funcao (nome) values (?)";
@@ -20,4 +20,4 @@ if($_POST){
     </div>
     <input type="submit" class="form-control" value="Salvar">
   </form>
-<?php include("../layout/footer.php");?>
+<?php include("../layout/footer.php");

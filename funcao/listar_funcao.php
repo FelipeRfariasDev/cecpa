@@ -27,4 +27,4 @@
   </tbody>
 </table>
 
-<?php include("../layout/footer.php");?>
+<?php include("../layout/footer.php");

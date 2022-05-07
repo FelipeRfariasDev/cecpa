@@ -1,5 +1,5 @@
-<?php include("../layout/header.php");?>
-<?php
+<?php include("../layout/header.php");
+
 if($_POST){
   $matricula = $_POST["matricula"];
   $nome = $_POST["nome"];
@@ -73,4 +73,4 @@ if($_POST){
   </div>
   <input type="submit" class="form-control" value="Salvar">
   </form>
-<?php include("../layout/footer.php");?>    
+<?php include("../layout/footer.php");   

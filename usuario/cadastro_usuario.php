@@ -1,6 +1,5 @@
-<?php include("../layout/header.php");?>
+<?php include("../layout/header.php");
 
-<?php
 if($_POST){
   $nome = $_POST["nome"];
   $email = $_POST["email"];
@@ -32,4 +31,5 @@ if($_POST){
 </div>
 <input type="submit" class="form-control" value="Salvar">
 </form>
-<?php include("../layout/footer.php");?>      
+
+<?php include("../layout/footer.php");    
