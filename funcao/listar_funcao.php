@@ -19,7 +19,7 @@
       <th scope="row"><?php echo $linha["id"];?></th>
       <td><?php echo $linha["nome"];?></td>
       <td>
-        <button type="button" class="btn btn-primary">Alterar</button>
+        <a href="atualizar_funcao.php?id=<?php echo $linha["id"];?>"><button type="button" class="btn btn-primary">Alterar</button></a>
         <a href="excluir_funcao.php?id=<?php echo $linha["id"];?>"><button type="button" class="btn btn-danger">Excluir</button></a>
       </td>
     </tr>
