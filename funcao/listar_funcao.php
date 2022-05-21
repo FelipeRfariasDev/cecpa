@@ -20,7 +20,7 @@
       <td><?php echo $linha["nome"];?></td>
       <td>
         <a href="atualizar_funcao.php?id=<?php echo $linha["id"];?>"><button type="button" class="btn btn-primary">Alterar</button></a>
-        <a href="excluir_funcao.php?id=<?php echo $linha["id"];?>"><button type="button" class="btn btn-danger">Excluir</button></a>
+        <a href="excluir_funcao.php?id=<?php echo $linha["id"];?>" onclick="return confirm('Tem certeza que deseja excluir?')"><button type="button" class="btn btn-danger">Excluir</button></a>
       </td>
     </tr>
     <?php }?>
